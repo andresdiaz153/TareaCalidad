@@ -34,7 +34,15 @@ public class ProductManager {
         return new ArrayList<>(products.values());
     }
 
-
+    public List<Product> getProductsByPriceRange(double min, double max) {
+        List<Product> result = new ArrayList<>();
+        for (Product product : products.values()) {
+            if (product.getPrice() >= min && product.getPrice() <= max) {
+                result.add(product);
+            }
+        }
+        return result;
+    }
 
 
 }
